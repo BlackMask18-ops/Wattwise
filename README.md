@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -216,7 +216,8 @@
     var area = L.GeometryUtil.geodesicArea(latlngs);
     var areaSqM = area.toFixed(1);
 
-    var solarKW = areaSqM / 5;
+    var areaPerKW = 5.5; // modern mono panels
+    var solarKW = areaSqM / areaPerKW;
     var costPerKW = solarKW <= 3 ? 65000 : solarKW <= 6 ? 58000 : 52000;
     var totalCost = solarKW * costPerKW;
     var subsidy = solarKW <= 3 ? solarKW * 14588 : 78000;
